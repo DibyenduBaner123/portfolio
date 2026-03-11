@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Risk Prediction Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>📊 Project Risk Prediction System</h1>
+
+    <!-- ================= FORM ================= -->
+    <form method="POST">
+        <input name="completion" placeholder="Completion %" required>
+        <input name="budget" placeholder="Budget Variance" required>
+        <input name="resource" placeholder="Resource Availability" required>
+        <input name="delay" placeholder="Delay Days" required>
+        <input name="productivity" placeholder="Team Productivity" required>
+        <input name="complexity" placeholder="Complexity" required>
+        <button type="submit">Predict Risk</button>
+    </form>
+
+    <!-- ================= RESULT ================= -->
+    {% if result %}
+    <div class="result 
+        {% if result.risk_level == 'High' %}
+            high-risk
+        {% else %}
+            low-risk
+        {% endif %}
+    ">
+        <h2>Risk Level: {{ result.risk_level }}</h2>
+        <h3>Risk Score: {{ result.risk_score }}%</h3>
+        <p>{{ alert }}</p>
+    </div>
+    {% endif %}
+
+    <!-- ================= HISTORY ================= -->
+    {% if records and records|length > 0 %}
+    <h2 style="margin-top:40px;">📜 Historical Reports</h2>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Completion %</th>
+            <th>Budget Variance</th>
+            <th>Risk Score</th>
+            <th>Risk Level</th>
+        </tr>
+
+        {% for row in records %}
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            <td>{{ row[3] }}%</td>
+            <td>{{ row[4] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+/* ===== Global Styles ===== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* ===== Container ===== */
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== Title ===== */
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #1e3c72;
+}
+
+/* ===== Form Styling ===== */
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+form input:focus {
+    border-color: #2a5298;
+    outline: none;
+    box-shadow: 0 0 5px rgba(42, 82, 152, 0.4);
+}
+
+/* Full width button */
+form button {
+    grid-column: span 2;
+    padding: 12px;
+    background: #2a5298;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+form button:hover {
+    background: #1e3c72;
+}
+
+/* ===== Result Card ===== */
+.result {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.low-risk {
+    background: #e6f9ed;
+    color: #1a7f37;
+    border: 2px solid #1a7f37;
+}
+
+.high-risk {
+    background: #ffe6e6;
+    color: #b30000;
+    border: 2px solid #b30000;
+}
+
+.warning {
+    background: #fff5cc;
+    color: #996600;
+    border: 2px solid #ffcc00;
+}
+
+/* ===== Footer ===== */
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 13px;
+    color: #666;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table th {
+    background: #2a5298;
+    color: white;
+    padding: 10px;
+}
+
+table td {
+    padding: 8px;
+    text-align: center;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
